@@ -1,1 +1,1 @@
-Activities module for the Farahub framework
+Categories module for the Farahub framework
