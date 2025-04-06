@@ -49,7 +49,7 @@ const people = {
     'main.createOrUpdate.preSave': async ({ data, connection, inject, person }) => {
 
         // assign categories
-        person.categories = data.categories.map(category => category.id);
+        person.categories = data.categories?.map(category => category.id);
     },
 
 }

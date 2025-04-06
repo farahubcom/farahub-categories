@@ -8,7 +8,22 @@ const { ObjectId } = mongoose.Types;
 
 const PersonSchema = new Schema({
     categories: [{ type: ObjectId, ref: 'Category' }],
-}, { timestamps: true });
+}, {
+
+    /**
+     * Name of the collection
+     * 
+     * @var string
+     */
+    collection: "people:people",
+    
+    /**
+     * Enable collection timestamps
+     * 
+     * @var bool
+     */
+    timestamps: true, 
+});
 
 PersonSchema.pre('save', function (next) {
     this.wasNew = this.isNew;

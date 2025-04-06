@@ -8,7 +8,22 @@ const { ObjectId } = mongoose.Types;
 
 const ProductSchema = new Schema({
     categories: [{ type: ObjectId, ref: 'Category' }],
-}, { timestamps: true });
+}, {
+
+    /**
+     * Name of the collection
+     * 
+     * @var string
+     */
+    collection: "products:products",
+    
+    /**
+     * Enable collection timestamps
+     * 
+     * @var bool
+     */
+    timestamps: true, 
+});
 
 ProductSchema.pre('save', function (next) {
     this.wasNew = this.isNew;
